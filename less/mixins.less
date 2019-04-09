@@ -30,3 +30,24 @@
     color: @button-bg;
   }
 }
+
+.anchorStyle (@decoration,@color) {
+  text-decoration:@decoration;
+  color:@color;
+}
+
+.buttonStyle (@width, @bgcolor, @fontcolor) {
+  width:@width;
+  font-size:1.8rem;
+  padding:13px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid @silver;
+  background-color:@bgcolor;
+  color:@fontcolor;
+}
+
+.hoverTransition (@bordercolor, @time) {
+  border:3px solid @bordercolor;
+  transition:all @time;
+}

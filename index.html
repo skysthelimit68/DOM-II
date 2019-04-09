@@ -8,9 +8,10 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
   <script src="js/index.js" async></script>
-
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -20,14 +21,15 @@
 
   <header class="main-navigation">
     <div class="container nav-container">
-      <h1 class="logo-heading">Fun Bus</h1>
+      <h1 class="logo-heading"><span id="fun">Fun</span> Bus</h1>
       <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Blog</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#">Home<!--<i class="fas fa-home hide"></i>--></a>
+        <a class="nav-link" href="#">About Us<!--<i class="fas fa-user-friends hide"></i>--></a>
+        <a class="nav-link" href="#">Blog<!--<i class="far fa-clipboard hide"></i>--></a>
+        <a class="nav-link" href="#">Contact<!--<i class="fas fa-mobile-alt hide"></i>--></a>
       </nav>
     </div>
+   
   </header>
      
   <div class="container home">
@@ -67,20 +69,59 @@
       <div class="destination">
         <h4>Fun In The Sun</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-        <div class="btn">Sign Me Up!</div>
+        <div class="btn"><a href="#signup-form-wrap">Sign Me Up!</a></div>
       </div>
       <div class="destination">
         <h4>Mountain Excursion</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-        <div class="btn">Sign Me Up!</div>
+        <div class="btn"><a href="#signup-form-wrap">Sign Me Up!</a></div>
       </div>
       <div class="destination">
         <h4>Island Getaway</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-        <div class="btn">Sign Me Up!</div>
+        <div class="btn"><a href="#signup-form-wrap">Sign Me Up!</a></div>
       </div>
     </section>
   </div><!-- container -->
+
+  <div id="signup-form-wrap" class="overlay">
+    <div class="modal-wrap">
+      <div class="close-circle">
+        <a class="close" href="#">&times;</a>
+      </div>
+      <div class="form-wrap">
+        <form id="signup-form" action="#" method="post">
+          <div class="form-half-field">
+              <label for="firstName">First Name</label>
+              <input id="firstName" name="firstName" type="text">
+          </div>
+          <div class="form-half-field">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" name="lastName" type="text">
+          </div>
+          <div class="form-full-field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="text">
+          </div>
+          <div class="form-full-field">
+            <label for="tour">Select a tour</label>
+            <select id="selecting-tour" name="selecting-tour" >
+              <option>Fun in the Sun</option>
+              <option>Mountain Excursion</option>
+              <option>Island Getaway</option>
+            </select> 
+          </div>
+          <div class="form-full-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" maxlength="1024"></textarea>
+          </div>
+              <button type="submit">Submit</button>   
+          </form>
+        </div>
+    </div>
+</div>
+
+
 
   <footer class="footer">
     <p>Copyright Fun Bus 2018</p>
