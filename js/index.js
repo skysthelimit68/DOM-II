@@ -27,3 +27,53 @@ allinputs.forEach(elem => {
     });
 })
 
+let img = document.querySelector("img");
+img.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    alert("This is copyrighted photograph. Do not copy.");
+})
+
+
+let logo = document.querySelector(".logo-heading");
+TweenLite.set(logo, {transformPerspective:1000});
+logo.addEventListener("mousedown", (event) => {
+    //TweenLite.to(".logo-heading", 2, {rotationX:45});
+    TweenLite.to(event.target, 2, {rotationX:45, scaleX:0.8, z:-300});
+})
+logo.addEventListener("mouseup", (event) => {
+    TweenLite.to(event.target, 2, {rotationX:-45, scaleX:0.8, z:300});
+
+})
+
+let navItems = document.querySelectorAll("nav a");
+navItems.forEach( elem => {
+    elem.addEventListener("click", (event) => {
+        TweenLite.to(event.target, 2, {rotation:360, transformOrigin:"left top"});    })
+})
+
+let contentItems = document.querySelectorAll(".content-section div");
+function setID(arrayLike) {
+    let array = Array.from(arrayLike);
+    for(let i = 0; i < array.length; i++ ) {
+        array[i].setAttribute("id", "item" + i);
+    }
+}
+setID(contentItems);
+let newParent;
+
+contentItems.forEach( elem => {
+    elem.addEventListener('drag', (event) => {
+        event.dataTransfer.setData("text/html", event.target);
+    });
+    elem.addEventListener('drop', (event) => {
+        event.preventDefault();
+        let targetDiv = event.dataTransfer.getData('text/html');
+        newParent.prepend(event.target);
+    })
+    elem.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        newParent = event.target.parentNode.parentNode;
+        console.log(newParent);
+    })
+})
