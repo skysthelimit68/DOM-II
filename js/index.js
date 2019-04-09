@@ -55,6 +55,27 @@ navItems.forEach( elem => {
     })
 })
 
+let contentDestination = document.querySelector(".content-destination");
+contentDestination.addEventListener("mouseover", (event) => {
+    event.target.parentNode.style.border = "3px solid blue"; 
+    event.target.parentNode.style.padding = "10px"; 
+})
+contentDestination.addEventListener("mouseout", (event) => {
+    event.target.parentNode.style.border = "none";
+    event.target.parentNode.style.padding = "0";
+})
+
+let destinationImg = document.querySelector(".content-destination img");
+destinationImg.addEventListener("mouseover", (event) => {
+    event.stopPropagation();
+    event.target.style = "opacity: 0.5";
+})
+destinationImg.addEventListener("mouseout", (event) => {
+    event.stopPropagation();
+    event.target.style = "opacity:1";
+})
+
+
 let contentItems = document.querySelectorAll(".content-section div");
 function setID(arrayLike) {
     let array = Array.from(arrayLike);
@@ -79,24 +100,4 @@ contentItems.forEach( elem => {
         newParent = event.target.parentNode.parentNode;
         console.log(newParent);
     })
-})
-
-let contentDestination = document.querySelector(".content-destination");
-contentDestination.addEventListener("mouseover", (event) => {
-    event.target.parentNode.style.border = "3px solid blue"; 
-    event.target.parentNode.style.padding = "10px"; 
-})
-contentDestination.addEventListener("mouseout", (event) => {
-    event.target.parentNode.style.border = "none";
-    event.target.parentNode.style.padding = "0";
-})
-
-let destinationImg = document.querySelector(".content-destination img");
-destinationImg.addEventListener("mouseover", (event) => {
-    event.stopPropagation();
-    event.target.style = "opacity: 0.5";
-})
-destinationImg.addEventListener("mouseout", (event) => {
-    event.stopPropagation();
-    event.target.style = "opacity:1";
 })
