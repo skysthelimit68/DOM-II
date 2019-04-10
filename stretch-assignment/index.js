@@ -1,13 +1,19 @@
 let blocks = document.querySelectorAll(".block");
-let moveupCounter = -1;
+let moveupCounter=0;
 let distance;
 let target;
 let mouseDown = false;
 let order;
 
+
+
 blocks.forEach(elem => {
     elem.setAttribute("data-value", `${moveupCounter}`);
+    elem.setAttribute("style",`order: ${moveupCounter};` )
+    moveupCounter++;
 })
+
+moveupCounter = -1;
 
 blocks.forEach(elem => {
     elem.addEventListener("mousedown", (event) => {
