@@ -12,8 +12,8 @@ blocks.forEach(elem => {
         target = event.target;
         let time = 0;  
         distance = setInterval(function(){
-            time++;
-            event.target.setAttribute("style", `transform:translateX(${time}px);`);
+            time+=5;
+            event.target.setAttribute("style", `transform:translateX(${time*5}px);`);
             if(time >= 800) {
                 clearInterval(distance);
                 event.target.setAttribute("style", `transform:translateX(0px);`);
