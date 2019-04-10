@@ -49,11 +49,16 @@ logo.addEventListener("mouseup", (event) => {
 let navItems = document.querySelectorAll("nav a");
 navItems.forEach( elem => {
     elem.addEventListener("click", (event) => {
-        TweenLite.to(event.target, 2, {rotation:360, transformOrigin:"left top"});    })
+        //TweenLite.to(event.target, 2, {rotation:360, transformOrigin:"left top"});    })
+        
+        navAnimate(event.target);})
     elem.addEventListener("click", (event) => {
         event.preventDefault();
     })
 })
+
+function navAnimate(eTarget) {
+}
 
 let contentDestination = document.querySelector(".content-destination");
 contentDestination.addEventListener("mouseover", (event) => {

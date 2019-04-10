@@ -5,8 +5,6 @@ let target;
 let mouseDown = false;
 let order;
 
-
-
 blocks.forEach(elem => {
     elem.setAttribute("data-value", `${moveupCounter}`);
     elem.setAttribute("style",`order: ${moveupCounter};` )
@@ -25,8 +23,7 @@ blocks.forEach(elem => {
         target = event.target;
         let time = 0;  
         distance = setInterval(function(){
-            time+=5;
-            
+            time+=5;          
             event.target.setAttribute("style", `transform:translateX(${time*5}px);order:${order};`);
             if(time >= 800) {
                 clearInterval(distance);
@@ -42,8 +39,7 @@ blocks.forEach(elem => {
             event.target.setAttribute("style", `order: ${moveupCounter};`);
             event.target.setAttribute("data-value", `${moveupCounter}`);
             moveupCounter--;
-        }
-        
+        } 
     })    
 })
     window.addEventListener("mouseup", (event) => {
