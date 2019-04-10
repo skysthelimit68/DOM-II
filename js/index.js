@@ -48,9 +48,7 @@ logo.addEventListener("mouseup", (event) => {
 
 let navItems = document.querySelectorAll("nav a");
 navItems.forEach( elem => {
-    elem.addEventListener("click", (event) => {
-        //TweenLite.to(event.target, 2, {rotation:360, transformOrigin:"left top"});    })
-        
+    elem.addEventListener("click", (event) => {        
         navAnimate(event.target);})
     elem.addEventListener("click", (event) => {
         event.preventDefault();
@@ -58,6 +56,7 @@ navItems.forEach( elem => {
 })
 
 function navAnimate(eTarget) {
+    TweenLite.fromTo(eTarget, 2, {rotation: 0},{rotation:360, transformOrigin:"left top"});    
 }
 
 let contentDestination = document.querySelector(".content-destination");
