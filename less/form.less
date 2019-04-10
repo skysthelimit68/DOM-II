@@ -1,0 +1,46 @@
+form {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin-top:10px;
+    font-size:1.6rem;
+}
+
+.form-wrap {
+    padding: 0 3%;
+    .form-half-field{
+        width:48%;
+        display: flex;
+        flex-direction: column;
+        margin-top:20px;
+        @media @mobile {
+            width:100%;
+        }
+    }
+    .form-full-field {
+        width:100%;   
+        display: flex;
+        flex-direction: column;
+        margin-top:20px;
+    }
+    button {
+        .buttonStyle(80%, @eastern-blue, @white);
+        margin:40px auto 10px;
+        &:hover {
+            .hoverTransition(@eastern-blue, 500ms);
+            padding:11px 13px;
+            background-color: darken(@eastern-blue, 10%);
+        }
+
+    }  
+}
+
+input, textarea, select {
+    padding: 10px;
+    height: 50px;
+    font-size: 1em;
+    font-family: monospace, serif;
+    color: #555;
+    margin-top:5px;
+    border-radius:5px;
+}

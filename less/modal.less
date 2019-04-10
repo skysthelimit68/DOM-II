@@ -1,0 +1,62 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+
+    &:target {
+        visibility: visible;
+        opacity: 1;    
+    }
+  }
+ 
+  .modal-wrap {
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+    max-width: 450px;
+    @media @mobile {
+        max-width:90%;
+    }
+   
+  }
+
+  .close-circle {
+    background-color: #ecc600;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &:hover {
+        .hoverTransition(@eastern-blue, 500ms);
+    }
+    
+    .close {
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333; 
+
+        &:hover {
+            color:@eastern-blue;
+        }
+    }
+  }
